@@ -1,0 +1,100 @@
+{
+    "analyst": [
+        {
+            "name": "xxxx",
+            "office": "somewhere",
+            "group": "helping clients",
+            "product": "important",
+            "manager": "important people",
+            "email": "xxx1@bbg.net"
+        },
+        {
+            "name": "xxxx1",
+            "office": "somewhere1",
+            "group": "helping clients1",
+            "product": "important",
+            "manager": "important people",
+            "email": "xxx1@bbg.net"
+        }
+    ],
+    "manager": [
+        {
+            "name": "xxxxx",
+            "office": "somewhere2",
+            "group": "helping clients1",
+            "product": "having fun",
+            "manager": "xxxxx",
+            "email": "xxx@bbg.net",
+            "managedOff": [
+                ""
+            ]
+        }
+
+    ],
+    "team": [
+        {
+            "category": "1",
+            "product": [
+                "2"
+            ]
+        },
+        {
+            "category": "2",
+            "product": [
+                "1",
+                "3"
+            ]
+        }
+    ],
+    "impact": [
+        {
+            "category": "Having Fun",
+            "product": [
+                "fun",
+                "very fun"
+            ]
+        },
+        {
+            "category": "To Eat",
+            "product": [
+                "Carb",
+                "Sugar",
+                "Beans"
+            ]
+        }
+    ],
+    "roi": [
+        {
+            "category": "1",
+            "product": [
+                "4",
+                "5"
+            ]
+        },
+        {
+            "category": "xx",
+            "product": [
+                "2",
+                "5",
+                "2"
+            ]
+        }
+    ],
+    "units": [
+        {
+            "product": [
+                "2",
+                "4",
+                "6"
+            ]
+        }
+    ],
+    "location": [
+        {
+            "product": [
+                "here",
+                "there"
+            ]
+        }
+    ]
+}

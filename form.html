@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Idea! Idea! Idea!</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="dataFile.json"></script>
+  <script src="js/moment.js"></script>
+
+
+</head>
+
+<body>
+  <div class="modal">
+    <div class="modal__container">
+      <div class="modal__featured">
+        <div class="modal__circle"></div>
+        <img src="idea.gif" class="modal__product" />
+      </div>
+      <div class="modal__content">
+        <h2>Idea Inspiration</h2>
+
+        <form name="postform" action="idea_post.php" method="post" enctype="multipart/form-data" novalidate>
+          <ul class="form-list">
+            <!-- Team NAME -->
+            <li class="form-list__row">
+              <label>Select Your Team. To add team, please click <a href="" target="_blank" />here</a> </label>
+              <!-- <textarea id="teamName" name="teamName"></textarea> -->
+              <select id="teamName" name="teamName">
+                <option value=""></option>
+				<option value="4s">4s</option>
+				<option value="11 Dollars">11 Dollars</option>
+				
+              </select>
+            </li>
+
+
+            <!-- Initiative -->
+            <li class="form-list__row">
+              <label>Initiative (Please select one to see full form)</label>
+              <select id="initiative" name="initiative" onchange=switchForm()>
+                <option value=""></option>
+                <option value="Business Intellligence">Business Intellligence</option>
+                <option value="BBDS Dataset">BBDS Dataset</option>
+              </select>
+            </li>
+
+            <!-- BI -->
+            <div id="Business Intellligence" style="display:none">
+              <!-- PRODUCT -->
+              <li class="form-list__row">
+                <label>Refer to <a href="index.html#tools-bi" target="_blank">Process</a> for examples to the
+                  below</label>
+                <p></p>
+
+                <label>Which product are you building a dashboard for?</label>
+                <select required id="team" name="team"></select>
+              </li>
+
+              <!--Hypothesis-->
+              <li class="form-list__row">
+                <label>What is your hypothesis?</label>
+                <textarea id="bi_hypo" name="bi_hypo"></textarea>
+              </li>
+
+              <!-- Goal -->
+              <li class="form-list__row">
+                <label>What goal are you trying to achieve?</label>
+                <textarea id="bi_goal" name="bi_goal"></textarea>
+              </li>
+
+              <!-- BUSINESS QUESTION -->
+              <li class="form-list__row">
+                <label>What business question(s) are you answering?</label>
+                <textarea id="bi_bizQn" name="bi_bizQn"></textarea>
+              </li>
+            </div>
+
+            <!-- BBDS -->
+            <div id="BBDS Dataset" style="display:none">
+              <!-- GOAL -->
+              <li class="form-list__row">
+                <label>Refer to <a href="index.html#tools" target="_blank">Process</a> for examples to the below</label>
+                <p></p>
+
+                <label>Your Goal</label>
+                <select id="bbds_goal" name="bbds_goal">
+                  <option value=""></option>
+                  <option value="BQNT SEMI-News Automation">BQNT SEMI-News Automation</option>
+                  <option value="BAI FULL-News Automation">BAI FULL-News Automation</option>
+                  <option value="Other Business Consumptions (Function/ FLDS/ ES feed)">Other Business Consumptions
+                    (Function/ FLDS/ ES feed)</option>
+                </select>
+              </li>
+
+              <!-- Data source -->
+              <li class="form-list__row">
+                <label>How do you name this dataset?</label>
+                <textarea id="bbds_name" name="bbds_name"></textarea>
+              </li>
+
+              <li class="form-list__row">
+                <label>What type of BBDS Data Discovery?</label>
+                <select id="bbds_type" name="bbds_type">
+                  <option value=""></option>
+                  <option value="Unprocessed Data Points">Unprocessed Data Points
+                  </option>
+                  <option value="Web Data">Web Data</option>
+                  <option value="Others">Others, please specify below</option>
+                </select>
+              </li>
+
+              <li class="form-list__row">
+                <textarea id="bbds_type_others" name="bbds_type_others"></textarea>
+              </li>
+
+
+              <!-- Data source -->
+              <li class="form-list__row">
+                <label>Where is Data Source? (Example: disclosure documents, weblinks)</label>
+                <textarea id="bbds_source" name="bbds_source"></textarea>
+              </li>
+
+              <!-- Data demand -->
+              <li class="form-list__row">
+                <label>Where do you see the business demand? (please quantify if possible such as Revenue generation,
+                  News generation, Sales/Client requests, New Product Coverage etc. You may refer to DRQS/ASK/PROS for
+                  reference)</label>
+                <textarea id="bbds_demand" name="bbds_demand"></textarea>
+              </li>
+
+              <!-- Data business -->
+              <li class="form-list__row">
+                <label>Describe your new data use case, if any</label>
+                <textarea id="bbds_usecase" name="bbds_usecase"></textarea>
+              </li>
+              </div>
+
+              <li class="form-list__row form-list__row--agree">
+                <label>
+                  <input disabled type="checkbox" name="save_cc" checked="checked">
+                  By submitting you agree to the ridiculously long terms that you didn't bother to read
+                </label>
+              </li>
+              <br>
+              <li>
+                <button type="submit" class="button" onClick="return empty()">Submit</button>
+              </li>
+          </ul>
+        </form>
+      </div> <!-- END: .modal__content -->
+    </div> <!-- END: .modal__container -->
+  </div> 
+  <!-- END: .modal -->
+
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div id="button"></div>
+    <div id="container">
+      <div id="cont">
+        <div class="footer_center">
+          <h3>Zan</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END FOOTER -->
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+
+  <script src="js/index.js"></script>
+
+
+  <script>
+    //Function to show different form
+    function switchForm() {
+      document.getElementById("Business Intellligence").style.display = 'none';
+      document.getElementById("BBDS Dataset").style.display = 'none';
+
+      var x = document.getElementById("initiative").value;
+
+      if (x == "Business Intellligence") {
+        document.getElementById("Business Intellligence").style.display = 'block';
+      } else if (x == "BBDS Dataset") {
+        document.getElementById("BBDS Dataset").style.display = 'block';
+      }
+    }
+
+    //Function to populate analyst name select
+    function populateAnalyst(selectTagId) {
+      var dropDown = $('#' + selectTagId);
+      dropDown.empty();
+      dropDown.append('<option selected="true" disabled></option>');
+      dropDown.prop('selectedIndex', 0);
+
+      // populate dropDown list
+      $.getJSON('dataFile.json', function (data) {
+        var data = data.analyst
+        $.each(data, function (key, entry) {
+          //console.log(entry)
+          dropDown.append($('<option></option>').attr('value', entry.name).text(entry.name));
+        });
+      });
+    }
+
+    //Function to add more analyst name select
+    var numOfAnalystInputed = 1;
+    function addNewNameSelect() {
+      numOfAnalystInputed++;
+      console.log(numOfAnalystInputed)
+      $('.analystNames').append($('<select></select>').attr('id', 'analystName' + numOfAnalystInputed).attr('name', 'user_analyst' + numOfAnalystInputed));
+      populateAnalyst('analystName' + numOfAnalystInputed)
+    }
+
+    populateAnalyst('analystName1')
+
+
+    //Populate impact/roi select
+    function populateImpactRoi(selectTagId) {
+
+      var dropDown = $('#' + selectTagId);
+      dropDown.empty();
+      dropDown.append('<option selected="true" disabled></option>');
+      dropDown.prop('selectedIndex', 0);
+
+      // populate dropDown list
+      $.getJSON('dataFile.json', function (data) {
+        var data = data[selectTagId]
+        $.each(data, function (key, entry) {
+          //console.log(entry)
+          dropDown.append($('<optgroup></optgroup>').attr('label', entry.category));
+
+          var i = 0;
+          while (i < entry.product.length) {
+            dropDown.append($('<option></option>').attr('value', entry.product[i]).text(entry.product[i]));
+            i++;
+          }
+        });
+      });
+    }
+
+    populateImpactRoi('team')
+
+    //check unfilled form
+    function empty() {
+      if (document.getElementById("status").value == "Idea" && (document.getElementById("roi").value == "FFM" || document.getElementById("roi").value == "News Assistance\/BRIEF\/Articles")) {
+        if (document.getElementById("analystName1").value == "" || document.getElementById("projectDetail").value == "" || document.getElementById("status").value == "") {
+          alert("Please fill in name, detail, select idea for status and FFM or News Assistance\/BRIEF\/Articles for the news idea submission");
+          return false;
+        }
+      } else if (document.getElementById("analystName1").value == "" || document.getElementById("projectDetail").value == "" || document.getElementById("status").value == ""
+        || document.getElementById("impact").value == "" || document.getElementById("roi").value == "" || document.getElementById("projectDate").value == ""
+        || document.getElementById("units").value == "") {
+        alert("Please fill in all the required fields before submitting");
+        return false;
+      }
+    }
+
+  </script>
+
+</body>
+
+</html>
