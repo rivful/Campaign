@@ -11,23 +11,23 @@ Users begin by selecting their global office location from an interactive icon g
 
 ### 2. Identity & Autocomplete
 Users input their name. To optimize user experience and data accuracy, I implemented **Autocomplete/Typeahead** logic that suggests employee names from the internal directory as the user types.
-![Step 2: User Identification](PLACE_LINK_TO_IDENTITY_IMAGE_HERE)
+![Step 2: User Identification](images/flow_1.png)
 
 ### 3. Team Classification
 A dynamic dropdown menu allows users to categorize their project by team. This step ensures the idea is routed to the correct department for review.
-![Step 3: Team Selection](PLACE_LINK_TO_TEAM_IMAGE_HERE)
+![Step 3: Team Selection](images/flow_2.png)
 
 ### 4. Project Specification (Idea Description)
 Users provide a detailed description of their innovation. The text area includes character-count validation to ensure descriptions are concise yet informative.
-![Step 4: Idea Description](PLACE_LINK_TO_IDEA_IMAGE_HERE)
+![Step 4: Idea Description](images/flow_3.png)
 
 ### 5. Lifecycle Status
 Users define the current state of their idea (e.g., Initial Concept, Prototype, or Submitted). This metadata is critical for tracking the project's maturity within the innovation pipeline.
-![Step 5: Idea State](PLACE_LINK_TO_STATE_IMAGE_HERE)
+![Step 5: Idea State](images/flow_4.png)
 
 ### 6. Review & Final Submission
 Before finalization, users are presented with a comprehensive **Review Page**. This allows for a final audit of all entered data (Team, Office, Description) before the record is committed to the database.
-![Step 6: Review and Submission](PLACE_LINK_TO_REVIEW_IMAGE_HERE)
+
 
 ## 🛠 Technical Achievements
 * **Dynamic State Management:** Developed a custom workflow controller that manages transitions between form steps based on input validation.
